@@ -28,3 +28,11 @@ const xrayHandlerFunction = () => {
 }
 
 document.querySelector("#activate-xray").addEventListener("click", xrayHandlerFunction);
+
+const actvAllHandlerFunction = () => {
+    const allSection = document.querySelectorAll("section");
+    allSection.classList.remove("disabled");
+    allSection.classList.add("enabled");
+}
+
+document.querySelector("#activate-all").addEventListener("click", actvAllHandlerFunction);
