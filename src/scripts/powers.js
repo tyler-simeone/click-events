@@ -28,3 +28,29 @@ const xrayHandlerFunction = () => {
 }
 
 document.querySelector("#activate-xray").addEventListener("click", xrayHandlerFunction);
+
+// Below is the code to modify multiple ele's class names at one time.
+// Had to loop through the node list / arr of section ele's and pass
+// in a callback fn to the arr method that modifies the class forEach
+// element
+const actvAllHandlerFunction = () => {
+    const allSectionEls = document.querySelectorAll("section");
+    
+    allSectionEls.forEach(function (el) {
+        el.classList.remove("disabled");
+        el.classList.add("enabled");
+    })
+}
+
+document.querySelector("#activate-all").addEventListener("click", actvAllHandlerFunction);
+
+const deactvAllHandlerFunction = () => {
+    const allSectionEls = document.querySelectorAll("section");
+    
+    allSectionEls.forEach(function (el) {
+        el.classList.remove("enabled");
+        el.classList.add("disabled");
+    })
+}
+
+document.querySelector("#deactivate-all").addEventListener("click", deactvAllHandlerFunction);
